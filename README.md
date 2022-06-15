@@ -1,16 +1,42 @@
-# proyek_uts_flutter
+# Proyek Flutter Aplikasi Pencatat Hutang
 
-A new Flutter project.
+Nama Anggota Kelompok:<br/>
+1. Amiruddin Fikri Nur (06)<br/>
+2. Dike Ayu Wardani (08)<br/>
+3. Siti Nurhalisa (27)<br/>
 
-## Getting Started
+## Mockup
+1. Halaman Utama <br/>
+![Screenshot Hasil](img/First%20Page.png)
+2. Halaman Login <br/>
+![Screenshot Hasil](img/Log%20In.png)
+3. Halaman Register <br/>
+![Screenshot Hasil](img/Register.png)
+4. Halaman Home <br/>
+![Screenshot Hasil](img/Home.png)
+5. Halaman Input Nama <br/>
+![Screenshot Hasil](img/Input%20Nama.png)
+6. Halaman Detail <br/>
+![Screenshot Hasil](img/Detail.png)
+7. Halaman Hutang <br/>
+![Screenshot Hasil](img/Input%20Hutang.png)
+8. Halaman Cicilan <br/>
+![Screenshot Hasil](img/Cicilan.png)
 
-This project is a starting point for a Flutter application.
+## Hasil Flutter
+1. Halaman Home <br/>
+![Screenshot Hasil](img/home.jpeg)
+2. Halaman Login <br/>
+![Screenshot Hasil](img/login.jpeg)
+3. Halaman Register <br/>
+![Screenshot Hasil](img/register.jpeg)
+4. Halaman Input Nama <br/>
+![Screenshot Hasil](img/input%20nama.jpeg)
+5. Halaman Detail <br/>
+![Screenshot Hasil](img/detail.jpeg)
+6. Halaman Hutang <br/>
+![Screenshot Hasil](img/hutang.jpeg)
+7. Halaman Cicilan <br/>
+![Screenshot Hasil](img/cicilan.jpeg)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
