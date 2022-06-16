@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:proyek_uts_flutter/authentikasi/home_screen.dart';
@@ -117,8 +118,22 @@ class _ChooseLoginState extends State<ChooseLogin> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
         onPressed: () {
-          signInWithGoogle().then((result) {
+          signInWithGoogle().then((result)  async {
             if (result != null) {
+
+              final _user =
+                  FirebaseFirestore.instance.collection('user').doc(email);
+
+              final json = {
+                "userId": FirebaseAuth.instance.currentUser?.uid,
+                "nama": FirebaseAuth.instance.currentUser?.displayName,
+                "email": FirebaseAuth.instance.currentUser?.email,
+                "password": "",
+                "created_at": DateTime.now(),
+              };
+
+              await _user.set(json);
+
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => Navigationbar()),

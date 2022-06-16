@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/authentikasi/choose_login.dart';
+import 'package:proyek_uts_flutter/authentikasi/sign_in.dart';
 import 'package:proyek_uts_flutter/pages/home.dart';
 import 'package:proyek_uts_flutter/pages/inputnama.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,9 +37,7 @@ class _NavigationbarState extends State<Navigationbar> {
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () => FirebaseAuth.instance.signOut().then((_) =>
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (contex) => ChooseLogin()))),
+                onTap: () => logOut(),
                 child: Icon(
                   Icons.logout_rounded,
                   size: 26.0,
@@ -67,5 +66,14 @@ class _NavigationbarState extends State<Navigationbar> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  logOut() {
+    if (FirebaseAuth.instance.currentUser != null) {
+      FirebaseAuth.instance.signOut().then((_) => Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (contex) => const ChooseLogin())));
+    }
+    signOutGoogle();
   }
 }
