@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
@@ -89,11 +90,16 @@ class _InputnamaState extends State<Inputnama> {
     final double? total = double.tryParse(totalController.text);
     if (name != null && alamat != null && total != null) {
       // Persist a new product to Firestore
-      await _peminjam.add(
-          {"nama_peminjam": name, "alamat_peminjam": alamat, "total": total});
+      await _peminjam.add({
+        "nama_peminjam": name,
+        "alamat_peminjam": alamat,
+        "total": total,
+        "ref_user_id": FirebaseAuth.instance.currentUser?.uid,
+        "created_at": DateTime.now(),
+      });
     }
 
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Berhasil Menambah Data')));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Berhasil Menambah Data')));
   }
 }

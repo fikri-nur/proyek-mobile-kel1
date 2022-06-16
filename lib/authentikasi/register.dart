@@ -131,13 +131,16 @@ class _RegisterState extends State<Register> {
       final String? email = emailController.text;
       final String? password = passwordController.text;
       if (nama != null && email != null && password != null) {
-        await _user.add(
-            {"nama": nama, "email": email, "password": password});
+        await _user.add({
+          "userId": FirebaseAuth.instance.currentUser?.uid,
+          "nama": nama,
+          "email": email,
+          "password": password,
+          "created_at": DateTime.now(),
+        });
       }
     } on FirebaseAuthException catch (e) {
       return e.message;
     }
-
-    
   }
 }

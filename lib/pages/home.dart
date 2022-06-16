@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:proyek_uts_flutter/widgets/formatMataUang.dart';
@@ -10,8 +11,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final String? userId = FirebaseAuth.instance.currentUser?.uid;
   final Stream<QuerySnapshot> _peminjam =
-      FirebaseFirestore.instance.collection('peminjam').orderBy("nama_peminjam").snapshots();
+      FirebaseFirestore.instance.collection('peminjam').where("ref_user_id", isEqualTo: FirebaseAuth.instance.currentUser?.uid).orderBy("created_at", descending: true).snapshots();
 
   int decimalDigit = 2;
 
