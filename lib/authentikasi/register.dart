@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
 import 'package:proyek_uts_flutter/authentikasi/login.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
@@ -109,38 +111,43 @@ class _RegisterState extends State<Register> {
             )));
   }
 
-  final CollectionReference _user =
-      FirebaseFirestore.instance.collection('user');
-
   Future signUp() async {
-    try {
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      )
-          .then((result) {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => Navigationbar()),
-          (Route<dynamic> route) => false,
-        );
-      });
+    final String? nama = namaController.text;
+    final String? email = emailController.text;
+    final String? password = passwordController.text;
 
-      final String? nama = namaController.text;
-      final String? email = emailController.text;
-      final String? password = passwordController.text;
-      if (nama != null && email != null && password != null) {
-        await _user.add({
+    final _user = FirebaseFirestore.instance.collection('user').doc(email);
+
+    if (nama != null && email != null && password != null) {
+      try {
+        await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+          email: email.trim(),
+          password: password.trim(),
+        )
+            .then((result) {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const Navigationbar()),
+            (Route<dynamic> route) => false,
+          );
+        });
+
+        final passwordToHash = password;
+        final bytesToHash = utf8.encode(passwordToHash);
+        final md5Digest = md5.convert(bytesToHash);
+        final json = {
           "userId": FirebaseAuth.instance.currentUser?.uid,
           "nama": nama,
           "email": email,
-          "password": password,
+          "password": md5Digest.toString(),
           "created_at": DateTime.now(),
-        });
+        };
+
+        await _user.set(json);
+      } on FirebaseAuthException catch (e) {
+        return e.message;
       }
-    } on FirebaseAuthException catch (e) {
-      return e.message;
     }
   }
 }
