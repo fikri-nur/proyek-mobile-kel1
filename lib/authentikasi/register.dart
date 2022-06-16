@@ -142,6 +142,7 @@ class _RegisterState extends State<Register> {
           "email": email,
           "password": md5Digest.toString(),
           "created_at": DateTime.now(),
+          "last_login": DateTime.now(),
         };
 
         await _user.set(json);

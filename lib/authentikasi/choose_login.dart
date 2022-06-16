@@ -129,7 +129,8 @@ class _ChooseLoginState extends State<ChooseLogin> {
                 "nama": FirebaseAuth.instance.currentUser?.displayName,
                 "email": FirebaseAuth.instance.currentUser?.email,
                 "password": "",
-                "created_at": DateTime.now(),
+                "created_at": "",
+                "last_login": DateTime.now(),
               };
 
               await _user.set(json);

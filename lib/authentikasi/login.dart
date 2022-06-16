@@ -1,4 +1,4 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/authentikasi/register.dart';
@@ -121,11 +121,18 @@ class _LoginState extends State<Login> {
           (Route<dynamic> route) => false,
         );
       });
+      
+      final _user = FirebaseFirestore.instance.collection('user').doc(FirebaseAuth.instance.currentUser?.email);
+
+      final json = {
+        "last_login": DateTime.now(),
+      };
+
+      await _user.update(json);
+
       return null;
     } on FirebaseAuthException catch (e) {
       return e.message;
     }
   }
-
-  
 }
