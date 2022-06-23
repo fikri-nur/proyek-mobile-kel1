@@ -45,7 +45,7 @@ class _InputnamaState extends State<Inputnama> {
             const Padding(padding: EdgeInsets.all(8)),
             TextField(
               controller: totalController,
-              keyboardType: TextInputType.numberWithOptions(decimal: false),
+              keyboardType: const TextInputType.numberWithOptions(decimal: false),
               decoration: InputDecoration(
                   labelText: 'Total',
                   border: OutlineInputBorder(
@@ -58,7 +58,7 @@ class _InputnamaState extends State<Inputnama> {
               height: 45,
               child: TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: Color(0xFF5DB075),
+                    backgroundColor: const Color(0xFF5DB075),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25))),
                 onPressed: () async {
@@ -70,7 +70,7 @@ class _InputnamaState extends State<Inputnama> {
 
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Navigationbar()),
+                    MaterialPageRoute(builder: (context) => const Navigationbar()),
                     (Route<dynamic> route) => false,
                   );
                 },

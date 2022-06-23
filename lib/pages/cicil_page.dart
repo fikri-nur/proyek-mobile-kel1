@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:proyek_uts_flutter/models/hutangpiutang.dart';
 import 'package:proyek_uts_flutter/models/peminjam.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 class CicilPage extends StatefulWidget {
   final Peminjam peminjam;
@@ -52,7 +50,7 @@ class _CicilPageState extends State<CicilPage> {
                 controller: deskripsiController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.description),
+                    suffixIcon: const Icon(Icons.description),
                     labelText: 'Deskripsi',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0))),
@@ -64,7 +62,7 @@ class _CicilPageState extends State<CicilPage> {
                 height: 45,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFF5DB075),
+                      backgroundColor: const Color(0xFF5DB075),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25))),
                   onPressed: () async {
@@ -73,7 +71,7 @@ class _CicilPageState extends State<CicilPage> {
                     deskripsiController.text = '';
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Navigationbar()),
+                      MaterialPageRoute(builder: (context) => const Navigationbar()),
                       (Route<dynamic> route) => false,
                     );
                   },

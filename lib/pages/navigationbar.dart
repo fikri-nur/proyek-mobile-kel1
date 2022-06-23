@@ -30,15 +30,15 @@ class _NavigationbarState extends State<Navigationbar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF5DB075),
+        backgroundColor: const Color(0xFF5DB075),
         centerTitle: true,
         title: const Text("HuTangmu", style: TextStyle(fontFamily: 'inter')),
         actions: <Widget>[
           Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () => logOut(),
-                child: Icon(
+                child: const Icon(
                   Icons.logout_rounded,
                   size: 26.0,
                 ),
@@ -60,7 +60,7 @@ class _NavigationbarState extends State<Navigationbar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xFF5DB075),
+        selectedItemColor: const Color(0xFF5DB075),
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: _onItemTapped,

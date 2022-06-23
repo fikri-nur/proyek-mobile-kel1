@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/models/hutangpiutang.dart';
 import 'package:proyek_uts_flutter/models/peminjam.dart';
-import 'package:proyek_uts_flutter/pages/detail_page.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
 class HutangPage extends StatefulWidget {
@@ -51,7 +50,7 @@ class _HutangPageState extends State<HutangPage> {
                 controller: deskripsiController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.description),
+                    suffixIcon: const Icon(Icons.description),
                     labelText: 'Deskripsi',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0))),
@@ -63,7 +62,7 @@ class _HutangPageState extends State<HutangPage> {
                 height: 45,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFF5DB075),
+                      backgroundColor: const Color(0xFF5DB075),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25))),
                   onPressed: () async {
@@ -74,7 +73,7 @@ class _HutangPageState extends State<HutangPage> {
 
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Navigationbar()),
+                      MaterialPageRoute(builder: (context) => const Navigationbar()),
                       (Route<dynamic> route) => false,
                     );
                   },

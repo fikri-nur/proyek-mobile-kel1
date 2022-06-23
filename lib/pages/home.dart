@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:proyek_uts_flutter/models/peminjam.dart';
 import 'package:proyek_uts_flutter/pages/detail_page.dart';
-import 'package:proyek_uts_flutter/widgets/formatMataUang.dart';
+import 'package:proyek_uts_flutter/widgets/formatmatauang.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,29 +20,6 @@ class _HomeState extends State<Home> {
       .snapshots()
       .map((snapshot) =>
           snapshot.docs.map((doc) => Peminjam.fromJson(doc.data())).toList());
-
-  Widget buildPeminjam(Peminjam peminjam) => ListTile(
-      leading: const CircleAvatar(
-        backgroundColor: Colors.white,
-        child: Icon(Icons.person),
-      ),
-      title: Text(peminjam.nama_peminjam),
-      subtitle: Text(FormatMataUang.convertToIdr(peminjam.total, 2)),
-      // Text(data['total'].toString()),
-      trailing: SizedBox(
-        width: 100,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed: () async {
-                await deleteData(peminjam);
-              },
-            ),
-          ],
-        ),
-      ));
 
   @override
   Widget build(BuildContext context) {
@@ -72,27 +49,27 @@ class _HomeState extends State<Home> {
         MaterialPageRoute(builder: (context) => DetailPage(peminjam: peminjam)),
       ),
       child: ListTile(
-        leading: const CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Icon(Icons.person),
-        ),
-        title: Text(peminjam.nama_peminjam),
-        subtitle: Text(FormatMataUang.convertToIdr(peminjam.total, 2)),
-        // Text(data['total'].toString()),
-        trailing: SizedBox(
-          width: 100,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.delete),
-                onPressed: () async {
-                  await deleteData(peminjam);
-                },
-              ),
-            ],
+          leading: const CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Icon(Icons.person),
           ),
-        )),
+          title: Text(peminjam.nama_peminjam),
+          subtitle: Text(FormatMataUang.convertToIdr(peminjam.total, 2)),
+          // Text(data['total'].toString()),
+          trailing: SizedBox(
+            width: 100,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () async {
+                    await deleteData(peminjam);
+                  },
+                ),
+              ],
+            ),
+          )),
     );
   }
 

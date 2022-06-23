@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:proyek_uts_flutter/authentikasi/home_screen.dart';
 import 'package:proyek_uts_flutter/authentikasi/sign_in.dart';
 import 'package:proyek_uts_flutter/authentikasi/login.dart';
-import 'package:proyek_uts_flutter/pages/login_success.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
 class ChooseLogin extends StatefulWidget {
@@ -18,7 +16,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF5DB075),
+      backgroundColor: const Color(0xFF5DB075),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,27 +24,27 @@ class _ChooseLoginState extends State<ChooseLogin> {
             Container(
               height: 200,
               width: 200,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
                   image: DecorationImage(
                       image: AssetImage('assets/images/purse.png'),
                       fit: BoxFit.cover),
                   shape: BoxShape.circle),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text("HuTangmu",
+            const Text("HuTangmu",
                 style: TextStyle(
                     fontFamily: 'inter',
                     color: Colors.white,
                     fontSize: 36,
                     fontWeight: FontWeight.bold)),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             _signInButton1(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             _signInButton2(),
@@ -62,7 +60,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
       height: 55,
       child: TextButton(
         style: TextButton.styleFrom(
-            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
         onPressed: () {
@@ -91,7 +89,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Image(image: AssetImage("assets/images/email.png"), height: 50),
             SizedBox(width: 10),
             Text(
@@ -114,7 +112,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
       height: 55,
       child: TextButton(
         style: TextButton.styleFrom(
-            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
         onPressed: () {
@@ -137,7 +135,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
 
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => Navigationbar()),
+                MaterialPageRoute(builder: (context) => const Navigationbar()),
                 (Route<dynamic> route) => false,
               );
             }
@@ -145,7 +143,7 @@ class _ChooseLoginState extends State<ChooseLogin> {
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Image(image: AssetImage("assets/images/google.png"), height: 50),
             SizedBox(width: 10),
             Text(

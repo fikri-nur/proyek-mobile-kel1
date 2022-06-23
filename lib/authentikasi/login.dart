@@ -30,7 +30,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF5DB075),
+          backgroundColor: const Color(0xFF5DB075),
           centerTitle: true,
           title: const Text("HuTangmu", style: TextStyle(fontFamily: 'inter')),
         ),
@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                   height: 45,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                        backgroundColor: Color(0xFF5DB075),
+                        backgroundColor: const Color(0xFF5DB075),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25))),
                     onPressed: signIn,
@@ -91,16 +91,16 @@ class _LoginState extends State<Login> {
                         text: TextSpan(
                   text: 'Belum punya akun?',
                   style:
-                      TextStyle(color: Color(0xFF5DB075), fontFamily: 'inter'),
+                      const TextStyle(color: Color(0xFF5DB075), fontFamily: 'inter'),
                   children: <TextSpan>[
                     TextSpan(
                         text: ' Register',
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Register()))),
+                                  builder: (context) => const Register()))),
                   ],
                 )))
               ],
@@ -117,7 +117,7 @@ class _LoginState extends State<Login> {
           .then((result) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => Navigationbar()),
+          MaterialPageRoute(builder: (context) => const Navigationbar()),
           (Route<dynamic> route) => false,
         );
       });

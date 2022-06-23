@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 import 'package:proyek_uts_flutter/pages/splashscreen.dart';
 
 Future<void> main() async {

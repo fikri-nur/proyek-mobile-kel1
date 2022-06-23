@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/authentikasi/choose_login.dart';
 
@@ -29,7 +28,7 @@ class _SplashscreenState extends State<Splashscreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF5DB075),
+      backgroundColor: const Color(0xFF5DB075),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,23 +36,23 @@ class _SplashscreenState extends State<Splashscreen> {
             Container(
               height: 200,
               width: 200,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+              decoration: const BoxDecoration(
+                  color:  Color.fromARGB(255, 255, 255, 255),
                   image: DecorationImage(
                       image: AssetImage('assets/images/purse.png'),
                       fit: BoxFit.cover),
                   shape: BoxShape.circle),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text("HuTangmu",
+            const Text("HuTangmu",
                 style: TextStyle(
                     fontFamily: 'inter',
                     color: Colors.white,
                     fontSize: 36,
                     fontWeight: FontWeight.bold)),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -61,12 +60,12 @@ class _SplashscreenState extends State<Splashscreen> {
               height: 45,
               child: TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25))),
                 onPressed: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => ChooseLogin()));
+                      MaterialPageRoute(builder: (context) => const ChooseLogin()));
                 },
                 child: const Text(
                   "Mulai",

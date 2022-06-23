@@ -25,7 +25,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF5DB075),
+          backgroundColor: const Color(0xFF5DB075),
           centerTitle: true,
           title: const Text("HuTangmu", style: TextStyle(fontFamily: 'inter')),
         ),
@@ -78,7 +78,7 @@ class _RegisterState extends State<Register> {
                   height: 45,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                        backgroundColor: Color(0xFF5DB075),
+                        backgroundColor: const Color(0xFF5DB075),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25))),
                     onPressed: signUp,
@@ -95,16 +95,16 @@ class _RegisterState extends State<Register> {
                         text: TextSpan(
                   text: 'Sudah punya akun?',
                   style:
-                      TextStyle(color: Color(0xFF5DB075), fontFamily: 'inter'),
+                      const TextStyle(color: Color(0xFF5DB075), fontFamily: 'inter'),
                   children: <TextSpan>[
                     TextSpan(
                         text: ' Login',
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Login()))),
+                                  builder: (context) => const Login()))),
                   ],
                 )))
               ],
