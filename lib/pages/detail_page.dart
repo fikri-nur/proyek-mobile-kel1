@@ -45,6 +45,22 @@ class _DetailPageState extends State<DetailPage> {
       }
     }
 
+    Text _text(String status, double jumlah) {
+      if (status == 'cicilan') {
+        return Text("-" + FormatMataUang.convertToIdr(jumlah, 2),
+            style: TextStyle(
+              fontFamily: 'inter',
+              fontSize: 16,
+            ));
+      } else {
+        return Text("+" + FormatMataUang.convertToIdr(jumlah, 2),
+            style: TextStyle(
+              fontFamily: 'inter',
+              fontSize: 16,
+            ));
+      }
+    }
+
     Widget buildPeminjam(HutangPiutang data) => SizedBox(
         height: 80,
         width: MediaQuery.of(context).size.width,
@@ -63,12 +79,9 @@ class _DetailPageState extends State<DetailPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(FormatMataUang.convertToIdr(data.nominal, 2),
-                      style: TextStyle(
-                        fontFamily: 'inter',
-                        fontSize: 16,
-                      )),
-                  Text(data.deskripsi, style: TextStyle(fontSize: 14)),
+                  _text(data.status, data.nominal),
+                  Text(data.deskripsi,
+                      style: TextStyle(fontSize: 14)),
                 ],
               ),
               Spacer(),

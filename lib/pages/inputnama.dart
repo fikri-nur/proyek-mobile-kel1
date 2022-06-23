@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyek_uts_flutter/models/hutangpiutang.dart';
 import 'package:proyek_uts_flutter/models/peminjam.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
@@ -102,14 +103,21 @@ class _InputnamaState extends State<Inputnama> {
       final json = data.toJson();
 
       await _peminjam.set(json);
-      // await _peminjam.set({
-      //   "id": _peminjam.id,
-      //   "ref_user_id": FirebaseAuth.instance.currentUser?.uid,
-      //   "nama_peminjam": name,
-      //   "alamat_peminjam": alamat,
-      //   "total": total,
-      //   "created_at": DateTime.now(),
-      // });
+
+      final _hutang = FirebaseFirestore.instance.collection('hutangpiutang').doc();
+
+      final inputHutang = HutangPiutang(
+          id: _hutang.id,
+          ref_peminjam_id: _peminjam.id,
+          status: 'hutang',
+          nominal: total,
+          deskripsi: 'Hutang Awal',
+          created_at: DateTime.now());
+
+      final inputJson = inputHutang.toJson();
+      await _hutang.set(inputJson);
+
+
     }
 
     ScaffoldMessenger.of(context)

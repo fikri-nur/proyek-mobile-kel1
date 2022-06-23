@@ -48,16 +48,6 @@ class _HutangPageState extends State<HutangPage> {
               ),
               const Padding(padding: EdgeInsets.all(8)),
               TextField(
-                controller: dateController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.date_range),
-                    labelText: 'Tanggal Hutang',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0))),
-              ),
-              const Padding(padding: EdgeInsets.all(8)),
-              TextField(
                 controller: deskripsiController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
