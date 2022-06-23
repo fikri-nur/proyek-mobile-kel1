@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyek_uts_flutter/models/peminjam.dart';
 import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
 class Inputnama extends StatefulWidget {
@@ -15,8 +16,7 @@ class _InputnamaState extends State<Inputnama> {
   TextEditingController alamatController = TextEditingController();
   TextEditingController totalController = TextEditingController();
 
-  final CollectionReference _peminjam =
-      FirebaseFirestore.instance.collection('peminjam');
+  final _peminjam = FirebaseFirestore.instance.collection('peminjam').doc();
 
   @override
   Widget build(BuildContext context) {
@@ -90,13 +90,26 @@ class _InputnamaState extends State<Inputnama> {
     final double? total = double.tryParse(totalController.text);
     if (name != null && alamat != null && total != null) {
       // Persist a new product to Firestore
-      await _peminjam.add({
-        "nama_peminjam": name,
-        "alamat_peminjam": alamat,
-        "total": total,
-        "ref_user_id": FirebaseAuth.instance.currentUser?.uid,
-        "created_at": DateTime.now(),
-      });
+
+      final data = Peminjam(
+          id: _peminjam.id,
+          ref_user_id: FirebaseAuth.instance.currentUser!.uid,
+          nama_peminjam: name,
+          alamat_peminjam: alamat,
+          total: total,
+          created_at: DateTime.now());
+
+      final json = data.toJson();
+
+      await _peminjam.set(json);
+      // await _peminjam.set({
+      //   "id": _peminjam.id,
+      //   "ref_user_id": FirebaseAuth.instance.currentUser?.uid,
+      //   "nama_peminjam": name,
+      //   "alamat_peminjam": alamat,
+      //   "total": total,
+      //   "created_at": DateTime.now(),
+      // });
     }
 
     ScaffoldMessenger.of(context)
