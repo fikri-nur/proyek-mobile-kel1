@@ -7,42 +7,75 @@ Nama Anggota Kelompok:<br/>
 
 ## Mockup
 1. Halaman Utama <br/>
-![Screenshot Hasil](img/mockup/First%20Page.png)
+<img src="img/mockup/First%20Page.png" alt="drawing" width="300"/>
+<br/>
+
 2. Halaman Login <br/>
-![Screenshot Hasil](img/mockup/Log%20In.png)
+<img src="img/mockup/Log%20In.png" alt="drawing" width="300"/>
+<br/>
+
 3. Halaman Register <br/>
-![Screenshot Hasil](img/mockup/Register.png)
+<img src="img/mockup/Register.png" alt="drawing" width="300"/>
+<br/>
+
 4. Halaman Home <br/>
-![Screenshot Hasil](img/mockup/Home.png)
+<img src="img/mockup/Home.png" alt="drawing" width="300"/>
+<br/>
+
 5. Halaman Input Nama <br/>
-![Screenshot Hasil](img/mockup/Input%20Nama.png)
+<img src="img/mockup/Input%20Nama.png" alt="drawing" width="300"/>
+<br/>
+
 6. Halaman Detail <br/>
-![Screenshot Hasil](img/mockup/Detail.png)
+<img src="img/mockup/Detail.png" alt="drawing" width="300"/>
+<br/>
+
 7. Halaman Hutang <br/>
-![Screenshot Hasil](img/mockup/Input%20Hutang.png)
+<img src="img/mockup/Input%20Hutang.png" alt="drawing" width="300"/>
+<br/>
+
 8. Halaman Cicilan <br/>
-![Screenshot Hasil](img/mockup/Cicilan.png)
+<img src="img/mockup/Cicilan.png" alt="drawing" width="300"/>
+<br/>
+
 
 ## Hasil Flutter
 1. Splash Screen <br/>
-![Screenshot Hasil](img/hasil/splashscreen.jpeg)
+<img src="img/hasil/splashscreen.jpeg" alt="drawing" width="300"/>
+<br/>
+
 2. Halaman Pilih Login <br/>
-![Screenshot Hasil](img/hasil/choose%20login.jpeg)
+<img src="img/hasil/choose%20login.jpeg" alt="drawing" width="300"/>
+<br/>
+
 3. Halaman Login Email <br/>
-![Screenshot Hasil](img/hasil/login.jpeg)
+<img src="img/hasil/login.jpeg" alt="drawing" width="300"/>
+<br/>
+
 4. Halaman Register <br/>
-![Screenshot Hasil](img/hasil/register.jpeg)
+<img src="img/hasil/register.jpeg" alt="drawing" width="300"/>
+<br/>
+
 5. Halaman Login Google <br/>
-![Screenshot Hasil](img/hasil/google.jpeg)
+<img src="img/hasil/google.jpeg" alt="drawing" width="300"/>
+<br/>
+
 6. Halaman Home <br/>
-![Screenshot Hasil](img/hasil/home.jpeg)
+<img src="img/hasil/home.jpeg" alt="drawing" width="300"/>
+<br/>
+
 7. Halaman Input Nama <br/>
-![Screenshot Hasil](img/hasil/input%20nama.jpeg)
+<img src="img/hasil/input%20nama.jpeg" alt="drawing" width="300"/>
+<br/>
+
 8. Halaman Detail <br/>
-![Screenshot Hasil](img/hasil/detail.jpeg)
+<img src="img/hasil/detail.jpeg" alt="drawing" width="300"/>
+<br/>
+
 9. Halaman Input Hutang <br/>
-![Screenshot Hasil](img/hasil/hutang.jpeg)
+<img src="img/hasil/hutang.jpeg" alt="drawing" width="300"/>
+<br/>
+
 10. Halaman Input Cicilan <br/>
-![Screenshot Hasil](img/hasil/cicilan.jpeg)
-
-
+<img src="img/hasil/cicilan.jpeg" alt="drawing" width="300"/>
+<br/>
