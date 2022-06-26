@@ -7,36 +7,42 @@ Nama Anggota Kelompok:<br/>
 
 ## Mockup
 1. Halaman Utama <br/>
-![Screenshot Hasil](img/First%20Page.png)
+![Screenshot Hasil](img/mockup/First%20Page.png)
 2. Halaman Login <br/>
-![Screenshot Hasil](img/Log%20In.png)
+![Screenshot Hasil](img/mockup/Log%20In.png)
 3. Halaman Register <br/>
-![Screenshot Hasil](img/Register.png)
+![Screenshot Hasil](img/mockup/Register.png)
 4. Halaman Home <br/>
-![Screenshot Hasil](img/Home.png)
+![Screenshot Hasil](img/mockup/Home.png)
 5. Halaman Input Nama <br/>
-![Screenshot Hasil](img/Input%20Nama.png)
+![Screenshot Hasil](img/mockup/Input%20Nama.png)
 6. Halaman Detail <br/>
-![Screenshot Hasil](img/Detail.png)
+![Screenshot Hasil](img/mockup/Detail.png)
 7. Halaman Hutang <br/>
-![Screenshot Hasil](img/Input%20Hutang.png)
+![Screenshot Hasil](img/mockup/Input%20Hutang.png)
 8. Halaman Cicilan <br/>
-![Screenshot Hasil](img/Cicilan.png)
+![Screenshot Hasil](img/mockup/Cicilan.png)
 
 ## Hasil Flutter
-1. Halaman Home <br/>
-![Screenshot Hasil](img/home.jpeg)
-2. Halaman Login <br/>
-![Screenshot Hasil](img/login.jpeg)
-3. Halaman Register <br/>
-![Screenshot Hasil](img/register.jpeg)
-4. Halaman Input Nama <br/>
-![Screenshot Hasil](img/input%20nama.jpeg)
-5. Halaman Detail <br/>
-![Screenshot Hasil](img/detail.jpeg)
-6. Halaman Hutang <br/>
-![Screenshot Hasil](img/hutang.jpeg)
-7. Halaman Cicilan <br/>
-![Screenshot Hasil](img/cicilan.jpeg)
+1. Splash Screen <br/>
+![Screenshot Hasil](img/hasil/splashscreen.jpeg)
+2. Halaman Pilih Login <br/>
+![Screenshot Hasil](img/hasil/choose%20login.jpeg)
+3. Halaman Login Email <br/>
+![Screenshot Hasil](img/hasil/login.jpeg)
+4. Halaman Register <br/>
+![Screenshot Hasil](img/hasil/register.jpeg)
+5. Halaman Login Google <br/>
+![Screenshot Hasil](img/hasil/google.jpeg)
+6. Halaman Home <br/>
+![Screenshot Hasil](img/hasil/home.jpeg)
+7. Halaman Input Nama <br/>
+![Screenshot Hasil](img/hasil/input%20nama.jpeg)
+8. Halaman Detail <br/>
+![Screenshot Hasil](img/hasil/detail.jpeg)
+9. Halaman Input Hutang <br/>
+![Screenshot Hasil](img/hasil/hutang.jpeg)
+10. Halaman Input Cicilan <br/>
+![Screenshot Hasil](img/hasil/cicilan.jpeg)
 
 
