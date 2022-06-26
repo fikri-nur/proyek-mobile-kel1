@@ -1,5 +1,9 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:proyek_uts_flutter/authentikasi/choose_login.dart';
+import 'package:proyek_uts_flutter/pages/navigationbar.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
@@ -20,12 +24,13 @@ class _SplashscreenState extends State<Splashscreen> {
   //   return Timer(duration, () {
   //     Navigator.of(context).pushReplacement(
   //       MaterialPageRoute(builder: (_) {
-  //         return Login();
+  //         return const ChooseLogin();
   //       }),
   //     );
   //   });
   // }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF5DB075),
@@ -37,7 +42,7 @@ class _SplashscreenState extends State<Splashscreen> {
               height: 200,
               width: 200,
               decoration: const BoxDecoration(
-                  color:  Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   image: DecorationImage(
                       image: AssetImage('assets/images/purse.png'),
                       fit: BoxFit.cover),
@@ -64,8 +69,29 @@ class _SplashscreenState extends State<Splashscreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25))),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => const ChooseLogin()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                    builder: (context) {
+                      return StreamBuilder<User?>(
+                        stream: FirebaseAuth.instance.authStateChanges(),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                                child: CircularProgressIndicator());
+                          } else if (snapshot.hasError) {
+                            return Center(
+                              child: Text(
+                                  'Something went wrong ${snapshot.error}'),
+                            );
+                          } else if (snapshot.hasData) {
+                            return const Navigationbar();
+                          } else {
+                            return const ChooseLogin();
+                          }
+                        },
+                      );
+                    },
+                  ));
                 },
                 child: const Text(
                   "Mulai",

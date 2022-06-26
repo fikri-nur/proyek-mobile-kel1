@@ -64,28 +64,33 @@ class _ChooseLoginState extends State<ChooseLogin> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return StreamBuilder<User?>(
-                  stream: FirebaseAuth.instance.authStateChanges(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(child: CircularProgressIndicator());
-                    } else if (snapshot.hasError) {
-                      return Center(
-                        child: Text('Something went wrong ${snapshot.error}'),
-                      );
-                    } else if (snapshot.hasData) {
-                      return const Navigationbar();
-                    } else {
-                      return const Login();
-                    }
-                  },
-                );
-              },
-            ),
-          );
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const Login()));
+
+          // Navigator.of(context).push(
+          //   MaterialPageRoute(
+          //     builder: (context) {
+          //       return StreamBuilder<User?>(
+          //         stream: FirebaseAuth.instance.authStateChanges(),
+          //         builder: (context, snapshot) {
+          //           if (snapshot.connectionState == ConnectionState.waiting) {
+          //             return const Center(child: CircularProgressIndicator());
+          //           } else if (snapshot.hasError) {
+          //             return Center(
+          //               child: Text('Something went wrong ${snapshot.error}'),
+          //             );
+          //           } else if (snapshot.hasData) {
+          //             return const Navigationbar();
+          //           } else {
+          //             return const Login();
+          //           }
+          //         },
+          //       );
+          //     },
+          //   ),
+          // );
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -116,9 +121,8 @@ class _ChooseLoginState extends State<ChooseLogin> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
         onPressed: () {
-          signInWithGoogle().then((result)  async {
+          signInWithGoogle().then((result) async {
             if (result != null) {
-
               final _user =
                   FirebaseFirestore.instance.collection('user').doc(email);
 

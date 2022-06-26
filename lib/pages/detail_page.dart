@@ -108,7 +108,7 @@ class _DetailPageState extends State<DetailPage> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 5.5,
+            height: 150,
             decoration: const BoxDecoration(
               color: Color(0xFF5DB075),
             ),
