@@ -40,19 +40,19 @@ Nama Anggota Kelompok:<br/>
 
 ## Screenshot Firebase
 1. Firebase Authentication <br/>
-<img src="img/autentikasi/FirebaseAutentikasi.png" alt="drawing" width="500"/>
+<img src="img/autentikasi/FirebaseAutentikasi.png" alt="drawing"/>
 <br/>
 
 2. Collection User <br/>
-<img src="img/firestore/CollectionUser.png" alt="drawing" width="500"/>
+<img src="img/firestore/CollectionUser.png" alt="drawing"/>
 <br/>
 
 3. Collection Peminjam<br/>
-<img src="img/firestore/CollectionPeminjam.png" alt="drawing" width="500"/>
+<img src="img/firestore/CollectionPeminjam.png" alt="drawing"/>
 <br/>
 
 1. Collection HutangPiutang<br/>
-<img src="img/firestore/CollectionHutangPiutang.png" alt="drawing" width="500"/>
+<img src="img/firestore/CollectionHutangPiutang.png" alt="drawing"/>
 <br/>
 
 
