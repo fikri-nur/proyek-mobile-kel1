@@ -38,6 +38,26 @@ Nama Anggota Kelompok:<br/>
 <img src="img/mockup/Cicilan.png" alt="drawing" width="300"/>
 <br/>
 
+## Screenshot Firebase
+1. Firebase Authentication <br/>
+<img src="img/autentikasi/FirebaseAutentikasi.png" alt="drawing" width="500"/>
+<br/>
+
+2. Collection User <br/>
+<img src="img/firestore/CollectionUser.png" alt="drawing" width="500"/>
+<br/>
+
+3. Collection Peminjam<br/>
+<img src="img/firestore/CollectionPeminjam.png" alt="drawing" width="500"/>
+<br/>
+
+1. Collection HutangPiutang<br/>
+<img src="img/firestore/CollectionHutangPiutang.png" alt="drawing" width="500"/>
+<br/>
+
+
+
+
 
 ## Hasil Flutter
 1. Splash Screen <br/>

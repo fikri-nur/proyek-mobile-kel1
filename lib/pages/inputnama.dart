@@ -17,8 +17,6 @@ class _InputnamaState extends State<Inputnama> {
   TextEditingController alamatController = TextEditingController();
   TextEditingController totalController = TextEditingController();
 
-  final _peminjam = FirebaseFirestore.instance.collection('peminjam').doc();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -86,6 +84,8 @@ class _InputnamaState extends State<Inputnama> {
   }
 
   Future<void> _create() async {
+    final _peminjam = FirebaseFirestore.instance.collection('peminjam').doc();
+    
     final String? name = nameController.text;
     final String? alamat = alamatController.text;
     final double? total = double.tryParse(totalController.text);
@@ -116,8 +116,6 @@ class _InputnamaState extends State<Inputnama> {
 
       final inputJson = inputHutang.toJson();
       await _hutang.set(inputJson);
-
-
     }
 
     ScaffoldMessenger.of(context)
