@@ -51,7 +51,7 @@ Nama Anggota Kelompok:<br/>
 <img src="img/firestore/CollectionPeminjam.png" alt="drawing"/>
 <br/>
 
-1. Collection HutangPiutang<br/>
+4. Collection HutangPiutang<br/>
 <img src="img/firestore/CollectionHutangPiutang.png" alt="drawing"/>
 <br/>
 
